@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Chronos - Smart Reminder Parser",
+  "description": "A highly precise AI agent that parses voice and text into structured reminder data with absolute time resolution.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
