@@ -42,8 +42,7 @@ const App: React.FC = () => {
     try {
       const { data, rawText } = await parseInput(input);
 
-https://shavkatjon.app.n8n.cloud/webhook/create-reminder
-const N8N_URL = "PASTE_YOUR_N8N_PRODUCTION_URL_HERE";
+const N8N_URL = "https://shavkatjon.app.n8n.cloud/webhook/create-reminder";
 
 const chatId = window.Telegram?.WebApp?.initDataUnsafe?.user?.id;
 const reminderText = (data as any).text || rawText;
