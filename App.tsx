@@ -41,6 +41,34 @@ const App: React.FC = () => {
 
     try {
       const { data, rawText } = await parseInput(input);
+
+https://shavkatjon.app.n8n.cloud/webhook/create-reminder
+const N8N_URL = "PASTE_YOUR_N8N_PRODUCTION_URL_HERE";
+
+const chatId = window.Telegram?.WebApp?.initDataUnsafe?.user?.id;
+const reminderText = (data as any).text || rawText;
+const remindAtUnix = (data as any).remind_at; // must be unix seconds
+
+if (chatId && remindAtUnix) {
+  await fetch(N8N_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: reminderText,
+      remind_at: remindAtUnix,
+    }),
+  });
+}
+// ✅ PASTE THIS BLOCK ENDS HERE
+
+const newItem: HistoryItem = {
+  ...data,
+  id: generateId(),
+  createdAt: new Date().toISOString(),
+  originalInput: rawText
+};
+
       
       const newItem: HistoryItem = {
         ...data,
