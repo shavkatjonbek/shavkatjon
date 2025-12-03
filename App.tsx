@@ -68,14 +68,6 @@ const newItem: HistoryItem = {
   originalInput: rawText
 };
 
-      
-      const newItem: HistoryItem = {
-        ...data,
-        id: generateId(),
-        createdAt: new Date().toISOString(),
-        originalInput: rawText
-      };
-
       setHistory(prev => [newItem, ...prev]);
       setStatus(ParseStatus.SUCCESS);
     } catch (err) {
